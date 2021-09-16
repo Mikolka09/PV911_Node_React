@@ -34,7 +34,7 @@
 
 /*=========================================================================
 	Main Slider
-=========================================================================*/
+=========================================================================*/ 
     $(document).ready(function () {
 
         fetch("/api/slider")
@@ -46,36 +46,36 @@
                     let div = document.createElement("div");
                     div.className = "single-slide";
                     div.innerHTML = `\
-                <div className="bg-img kenburns-top-right" style="background-image: url();"></div>\
-            <div className="overlay"></div>\
-            <div className="slider-content-wrap d-flex align-items-center text-left">\
-                <div className="container">\
-                    <div className="slider-content">\
-                        <div className="dl-caption medium">\
-                            <div className="inner-layer">\
-                                <div data-animation="fade-in-right" data-delay="1s">${json[i].name}</div>\
+                <div class="bg-img kenburns-top-right" style="background-image: url();"></div>\
+            <div class="overlay"></div>\
+            <div class="slider-content-wrap d-flex align-items-center text-left">\
+                <div class="container">\
+                    <div class="slider-content">\
+                        <div class="dl-caption medium">\
+                            <div class="inner-layer">\
+                                <div data-animation="fade-in-right" data-delay="1s">${json[i].Msq1}</div>\
                             </div>\
                         </div>\
-                        <div className="dl-caption dl-border" data-animation="fade-in-left" data-delay="0s"></div>\
-                        <div className="dl-caption big">\
-                            <div className="inner-layer">\
-                                <div data-animation="fade-in-left" data-delay="2s">${json[i].Msq1}</div>\
+                        <div class="dl-caption dl-border" data-animation="fade-in-left" data-delay="0s"></div>\
+                        <div class="dl-caption big">\
+                            <div class="inner-layer">\
+                                <div data-animation="fade-in-left" data-delay="2s">${json[i].Msq2}</div>\
                             </div>\
                         </div>\
-                        <div className="dl-caption big">\
-                            <div className="inner-layer">\
-                                <div data-animation="fade-in-left" data-delay="2.5s">${json[i].Msq2}</div>\
+                        <div class="dl-caption big">\
+                            <div class="inner-layer">\
+                                <div data-animation="fade-in-left" data-delay="2.5s">${json[i].Msq3}</div>\
                             </div>\
                         </div>\
-                        <div className="dl-caption small">\
-                            <div className="inner-layer">\
-                                <div data-animation="fade-in-left" data-delay="3s">${json[i].Msq3}\
+                        <div class="dl-caption small">\
+                            <div class="inner-layer">\
+                                <div data-animation="fade-in-left" data-delay="3s">${json[i].Msq4}\
                                 </div>\
                             </div>\
                         </div>\
-                        <div className="dl-btn-group">\
-                            <div className="inner-layer">\
-                                <a href="#" className="dl-btn" data-animation="fade-in-left" data-delay="3.5s">${json[i].Msq4}<i className="arrow_right"></i></a>\
+                        <div class="dl-btn-group">\
+                            <div class="inner-layer">\
+                                <a href="#" class="dl-btn" data-animation="fade-in-left" data-delay="3.5s">${json[i].LinkText}<i class="arrow_right"></i></a>\
                             </div>\
                         </div>\
                     </div>\

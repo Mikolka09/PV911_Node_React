@@ -20,23 +20,24 @@ fetch("/api/slider")
                         <div className="dl-caption dl-border" data-animation="fade-in-left" data-delay="0s"></div>\
                         <div className="dl-caption big">\
                             <div className="inner-layer">\
-                                <div data-animation="fade-in-left" data-delay="2s">${json[i].Msq1}</div>\
+                                <div data-animation="fade-in-left" data-delay="2s">Dream home might be</div>\
                             </div>\
                         </div>\
                         <div className="dl-caption big">\
                             <div className="inner-layer">\
-                                <div data-animation="fade-in-left" data-delay="2.5s">${json[i].Msq2}</div>\
+                                <div data-animation="fade-in-left" data-delay="2.5s">closer than you think.</div>\
                             </div>\
                         </div>\
                         <div className="dl-caption small">\
                             <div className="inner-layer">\
-                                <div data-animation="fade-in-left" data-delay="3s">${json[i].Msq3}\
+                                <div data-animation="fade-in-left" data-delay="3s">Business is the activity of making  money.\
                                 </div>\
                             </div>\
                         </div>\
                         <div className="dl-btn-group">\
                             <div className="inner-layer">\
-                                <a href="#" className="dl-btn" data-animation="fade-in-left" data-delay="3.5s">${json[i].Msq4}<i className="arrow_right"></i></a>\
+                                <a href="#" className="dl-btn" data-animation="fade-in-left" data-delay="3.5s">View\
+                                    Projects <i className="arrow_right"></i></a>\
                             </div>\
                         </div>\
                     </div>\
