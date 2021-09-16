@@ -25,7 +25,17 @@ exports.get = function (req, res){
 
 //Update => PUT
 exports.put = function (req, res){
-    model.findByIdAndUpdate();
+    console.log("PUT start!");
+    const element =new model(req.body);
+    model.findByIdAndUpdate(
+        req.body._id,
+        element,
+        {}, //new:true - создает новый если не нашел по ID
+        function (err, result){
+            if(err){console.log(err); res.send(err);}
+            res.send(result);
+        }
+    );
 };
 
 //Delete => DELETE
