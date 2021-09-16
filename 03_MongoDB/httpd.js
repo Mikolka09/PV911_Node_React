@@ -9,6 +9,10 @@ const bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.json());
 
+//Подключить маршруты
+const router = require("./routes");
+app.use(router);
+
 const mongoUri = "mongodb+srv://pv911User:User70074524@nodecluster.whann.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 
 const mongoose = require("mongoose");
@@ -21,7 +25,7 @@ mongoose.connect( //Соединение с базой
     //JS выполнит эту функцию. В качестве аргумента будет передана оибка - или null
 
     function (err){ //После соединения обработать результат
-        if(err) {console.log(err); return;} //Если ошибка - вывести и остановить запуск
+        if(err) {console.log(err); return err;} //Если ошибка - вывести и остановить запуск
         console.log("http://localhost:3000/");
         app.listen(3000); //Если все ОК - запустить веб сервер
     }

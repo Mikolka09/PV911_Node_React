@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Управление слайдеров</title>
+</head>
+<body>
+
+<main id="main">
+
+</main>
+
+<form name="newSlider">
+    <input type="text" name="name" value="Slider name"><br>
+    <input type="text" name="Msq1" value="1"><br>
+    <input type="text" name="Msq2" value="2"><br>
+    <input type="text" name="Msq3" value="3"><br>
+    <input type="text" name="Msq4" value="4"><br>
+    <input type="text" name="url" value="http://localhost"><br>
+    <input type="text" name="imgUrl" value=""><br>
+    <input type="text" name="LinkText" value="read More"><br>
+    <input type="button" id="btnSend" value="Создать">
+</form>
+
+<script>
+    let SliderList = [];
+
+    function sendDel() {
+        fetch( "/api/slider", {
+            method: "delete",
+            body: JSON.stringify({_id : this.className}),
+            headers: { 'Content-Type': 'application/json' }
+        })
+            .then(res => {
+                if(res.status === 200) {
+                    console.log (SliderList.findIndex(s=> s._id == this.className));
+                    SliderList.splice(SliderList.findIndex(s=> s._id == this.className), 1);
+                    buildList();
+                } else {
+                    console.log (res);
+                }
+            })
+            //.then(json => {SliderList.push(json);buildList();})
+            .catch(err => {if (err) console.log(err);});
+    }
+
+    function buildList() {
+        // console.log(SliderList);
+        let main = document.getElementById("main");
+        main.innerHTML = "";
+        let ul = document.createElement("ul");
+        for (let i = 0; i < SliderList.length; i++) {
+            let li = document.createElement("li");
+            li.innerText = SliderList[i].name;
+            li.id = SliderList[i]._id;
+
+            let del = document.createElement("button");
+            del.type = "button";
+            del.innerText = "del";
+            del.className = SliderList[i]._id;
+            del.onclick = sendDel;
+
+            li.appendChild(del);
+
+            ul.appendChild(li);
+        }
+        main.appendChild(ul);
+    }
+
+    function loadSliders() {
+        fetch("/api/slider")
+            .then(res => res.json())
+            .then(json => {SliderList = json; buildList();})
+            .catch(err => {if (err) console.log(err);});
+    }
+    loadSliders();
+
+
+    document.getElementById("btnSend").onclick = function () {
+        let form = document.forms.newSlider;
+        let slide = {};
+        for (let i = 0; i < form.elements.length; i++) {
+            slide[form.elements[i].name] = form.elements[i].value;
+        }
+        console.log (slide);
+
+        fetch( "/api/slider", {
+            method: "post",
+            body: JSON.stringify(slide),
+            headers: { 'Content-Type': 'application/json' }
+        })
+            .then(res => res.json())
+            .then(json => {SliderList.push(json);buildList();})
+            .catch(err => {if (err) console.log(err);});
+    };
+</script>
+
+</body>
+</html>
