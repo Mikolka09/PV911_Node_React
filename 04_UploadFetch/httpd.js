@@ -8,7 +8,7 @@ app.use(express.static("public"));
 
 //Установить загрузку файлов
 const multer = require("multer")
-app.use(multer({dest:"public/uploads"}).single("imgFile"));
+app.use(multer({dest:"public/uploads"}).single("fileData"));
 
 //Настроим модуль для разборки запросов
 const bodyParser = require("body-parser");

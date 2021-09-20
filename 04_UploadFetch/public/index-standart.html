@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<main id="main">
+
+</main>
+
+<section id="frm">
+
+</section>
+<form action="/api/media" method="post" enctype="multipart/form-data">
+    <input type="text" name="name">
+    <input type="file" name="imgFile" multiple>
+    <input type="submit" value="send">
+</form>
+
+<script>
+    //Главный элемент
+    let main = document.getElementById("main");
+    let apiUrl = "/api/post";
+</script>
+
+</body>
+</html>
