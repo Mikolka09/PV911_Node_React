@@ -19,6 +19,7 @@ class Reactive extends React.Component{
         return (
             <div>
                 <h1>Hello Component!</h1>
+                <Counter startCounter = "5"></Counter>
                 <ul>
                     {
                         //this.state - динамическое хранилище данных
