@@ -23,7 +23,7 @@ app.use(router);
 
 
 // Настройка соединения с базой
-const mongoUri = "mongodb+srv://pv911User:QweAsdZxc!23@nodecluster.a9rlr.mongodb.net/Trello911?retryWrites=true&w=majority";
+const mongoUri = "mongodb+srv://pv911User:User70074524@nodecluster.whann.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 const mongoose = require("mongoose");
 
 mongoose.connect( // Соединиться с базой
