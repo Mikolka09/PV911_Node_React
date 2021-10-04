@@ -2,6 +2,7 @@
 const model = require("../models/column");
 const lastUpdate = require("./stateController");
 
+
 // Create => POST
 exports.post = function (req, res) {
     console.log ("POST start");

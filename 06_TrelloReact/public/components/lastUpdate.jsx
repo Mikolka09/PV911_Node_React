@@ -4,7 +4,7 @@ class LastUpdate extends React.Component {
         super(props);
         this.state = {
             lastUpdate: null,
-            classNow:"notNeed"
+            classNow: "notNeed"
         };
     }
 
@@ -13,25 +13,26 @@ class LastUpdate extends React.Component {
     }
 
     Get(){
-        fetch("/api/state")
-            .then(res=>res.text())
-            .then(text=>{
-                if(this.state.lastUpdate == null){
-                    this.SetState({lastUpdate: text});
+        fetch('/api/state')
+            .then(res => res.text())
+            .then(text => {
+                if(this.state.lastUpdate == null) {
+                    this.setState ({lastUpdate: text});
                     return;
                 }
-                if(this.state.lastUpdate != text){
-                    this.SetState({classNow: "need"});
+                if(this.state.lastUpdate != text) {
+                    this.setState ({classNow: "need"});
                 }
             })
-            .catch(err=>console.log(err));
+            .catch(err=> console.log(err));
     }
+
 
     render(){
         return (
             <div id="needUpdate" className={this.state.classNow}>
-
             </div>
         )
     }
+
 }
