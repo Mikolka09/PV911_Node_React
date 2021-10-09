@@ -9,6 +9,10 @@ router.put("/api/entities", cEntity.put);
 router.delete("/api/entities", cEntity.delete);
 */
 
+const cAuth = require("./controllers/auth/authController");
+router.get("/api/auth/checkEmail/:email", cAuth.checkEmail);
+router.post("/api/auth/register", cAuth.register);
+
 const cState = require("./controllers/stateController");
 router.get("/api/state", cState.get);
 
