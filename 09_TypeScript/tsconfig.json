@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    //"module": "commonjs",
+    "target": "es6",
+    "sourceMap": true,
+    "outFile": "./site.js"
+  },
+  "files": ["app.ts", "MyTs.ts"],
+  "exclude": [
+    "node_modules"
+  ]
+}
