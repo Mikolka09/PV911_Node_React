@@ -10,4 +10,4 @@ const Comment = new Schema({
     // JS содает объект динамически
     });
 
-module.exports = mongoose.model("Comments", Comment);
+module.exports = mongoose.model("Comment", Comment);

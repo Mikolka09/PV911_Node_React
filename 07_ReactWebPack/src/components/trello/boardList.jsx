@@ -1,8 +1,8 @@
 import React from "react";
-import ColumnList from "./columnList";
-import BoardHeaderItem from "./boardHeaderItem";
+import  ColumnList from "./columnList";
+import BoardHeaderItem from "./boardHeaderItem"
 
-export default class BoardList extends React.Component {
+class BoardList extends React.Component {
 
     constructor(props) {
         super(props);
@@ -23,7 +23,7 @@ export default class BoardList extends React.Component {
     }
 
     Create(item){
-        fetch("/api/board",
+        fetch("http://localhost:3000/api/board",
             {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
@@ -43,8 +43,8 @@ export default class BoardList extends React.Component {
 
     Read (){
         console.log("Start get data:");
-        fetch("http://localhost:3030/api/board")
-            .then(response => {console.log("response:"); console.log(response);return response.json();})
+        fetch("http://localhost:3000/api/board")
+            .then(response => response.json())
             .then(data => {
                 console.log("getData:");
                 console.log(data);
@@ -58,7 +58,7 @@ export default class BoardList extends React.Component {
 
     Update(item) {
         console.log(item);
-        fetch("/api/board",
+        fetch("http://localhost:3000/api/board",
             {
                 method: 'PUT',
                 headers: {'Content-Type': 'application/json'},
@@ -67,7 +67,7 @@ export default class BoardList extends React.Component {
             .then(response => response.json())
             .then(item => {
                 const items = this.state.items;
-                items[items.indexOf(el=> el._id === item._id)] = item;
+                items[items.indexOf(el=> el._id == item._id)] = item;
                 //items.push(item);
                 this.setState({
                     isLoaded: true,
@@ -86,7 +86,7 @@ export default class BoardList extends React.Component {
             isLoaded: true,
             items: items
         });
-        fetch("/api/board",
+        fetch("http://localhost:3000/api/board",
             {
                 method: 'DELETE',
                 headers: {'Content-Type': 'application/json'},
@@ -107,7 +107,7 @@ export default class BoardList extends React.Component {
     // Вывод основного состояния компонента
     renderData(){
         let columnList = (<div>Выберете доску в меню</div>);
-        if (this.state.activeBoard_Id !== 0)
+        if (this.state.activeBoard_Id != 0)
         {
             columnList = (
                 <div><ColumnList
@@ -156,3 +156,5 @@ export default class BoardList extends React.Component {
     }
 
 }
+
+export default BoardList;

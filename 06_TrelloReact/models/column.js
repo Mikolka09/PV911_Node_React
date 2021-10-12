@@ -10,4 +10,4 @@ const Column = new Schema({
     // JS содает объект динамически
     });
 
-module.exports = mongoose.model("Columns", Column);
+module.exports = mongoose.model("Column", Column);

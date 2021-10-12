@@ -1,5 +1,6 @@
 import React from "react";
 import CardList from "./cardList";
+
 class ColumnItem extends React.Component {
 
     constructor(props) {
@@ -138,4 +139,4 @@ class ColumnItem extends React.Component {
 
 }
 
-export default ColumnItem;
+export  default ColumnItem;

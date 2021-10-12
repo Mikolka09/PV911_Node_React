@@ -1,7 +1,7 @@
 import React from "react";
-import ColumnItem from "./columnItem";
+import ColumnItem from "./columnItem"
 
-export default class ColumnList extends React.Component {
+class ColumnList extends React.Component {
 
     constructor(props) {
         super(props);
@@ -20,7 +20,7 @@ export default class ColumnList extends React.Component {
 
     Create(item){
         item.board_id = this.props.board_id;
-        fetch("/api/column",
+        fetch("http://localhost:3000/api/column",
             {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
@@ -40,7 +40,7 @@ export default class ColumnList extends React.Component {
 
     Read (){
         console.log("Start get data:");
-        fetch("/api/column/" + this.props.board_id) // Читать только колонки с открытой доски
+        fetch("http://localhost:3000/api/column/" + this.props.board_id) // Читать только колонки с открытой доски
             .then(response => response.json())
             .then(data => {
                 console.log("getData:");
@@ -55,7 +55,7 @@ export default class ColumnList extends React.Component {
 
     Update(item) {
         item.board_id = this.props.board_id;
-        fetch("/api/column",
+        fetch("http://localhost:3000/api/column",
             {
                 method: 'PUT',
                 headers: {'Content-Type': 'application/json'},
@@ -64,7 +64,7 @@ export default class ColumnList extends React.Component {
             .then(response => response.json())
             .then(item => {
                 const items = this.state.items;
-                items[items.indexOf(el=> el._id === item._id)] = item;
+                items[items.indexOf(el=> el._id == item._id)] = item;
                 //items.push(item);
                 this.setState({
                     isLoaded: true,
@@ -83,7 +83,7 @@ export default class ColumnList extends React.Component {
             isLoaded: true,
             items: items
         });
-        fetch("/api/column",
+        fetch("http://localhost:3000/api/column",
             {
                 method: 'DELETE',
                 headers: {'Content-Type': 'application/json'},
@@ -139,3 +139,5 @@ export default class ColumnList extends React.Component {
     }
 
 }
+
+export default ColumnList;

@@ -10,4 +10,4 @@ const Card = new Schema({
     // JS содает объект динамически
     });
 
-module.exports = mongoose.model("Cards", Card);
+module.exports = mongoose.model("Card", Card);

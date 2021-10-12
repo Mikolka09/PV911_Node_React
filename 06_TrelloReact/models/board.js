@@ -9,4 +9,4 @@ const Board = new Schema({
     // JS содает объект динамически
     });
 
-module.exports = mongoose.model("Boards", Board);
+module.exports = mongoose.model("Board", Board);
