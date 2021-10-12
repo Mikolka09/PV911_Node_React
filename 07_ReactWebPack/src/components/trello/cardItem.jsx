@@ -1,3 +1,5 @@
+import React from "react";
+
 class CardItem extends React.Component {
 
     constructor(props) {
@@ -130,3 +132,5 @@ class CardItem extends React.Component {
     }
 
 }
+
+export default CardItem;

@@ -7,13 +7,13 @@ import {
 
 import './App.css';
 
-import Home from "./componets/static/pages/Home";
-import Error404 from "./componets/static/errors/Error404";
-import Header from "./componets/layout/header";
-import Footer from "./componets/layout/footer";
-import BoardList from "./componets/trello/boardList";
-import NpContainer from "./componets/novaposhta/npContainer";
-import Auth from "./componets/auth/Auth";
+import Home from "./components/static/pages/Home";
+import Error404 from "./components/static/errors/Error404";
+import Header from "./components/layout/header";
+import Footer from "./components/layout/footer";
+//import BoardList from "./components/trello/boardList";
+import NpContainer from "./components/novaposhta/npContainer";
+//import Auth from "./components/auth/Auth";
 
 
 
@@ -21,14 +21,14 @@ function App() {
   return (
       <Router>
           <Header />
-          <Auth></Auth>
+         {/* <Auth></Auth>*/}
           <main>
               <Switch>
                   <Route exact path="/">
                       <Home />
                   </Route>
                   <Route exact path="/trello">
-                      <BoardList />
+                     {/* <BoardList />*/}
                   </Route>
                   <Route path="/np">
                       <NpContainer />

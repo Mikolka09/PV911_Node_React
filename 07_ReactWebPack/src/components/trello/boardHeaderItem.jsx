@@ -1,3 +1,5 @@
+import React from "react";
+
 class BoardHeaderItem extends React.Component {
 
     constructor(props) {
@@ -135,3 +137,5 @@ class BoardHeaderItem extends React.Component {
     }
 
 }
+
+export default BoardHeaderItem;

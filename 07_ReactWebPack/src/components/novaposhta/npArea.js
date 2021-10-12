@@ -40,6 +40,7 @@ export default class NpArea extends React.Component {
     renderData(){
         return (
             <ul>
+                <h3>Regions:</h3>
                 {this.state.items.map(item =>
                     <li key={item.Ref} >
                         {item.DescriptionRu}
