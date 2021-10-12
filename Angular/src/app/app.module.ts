@@ -4,12 +4,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { myComponent } from './MyComponent/my.component';
 import { NovaPoshtaComponent } from './MyComponent/nova-poshta/nova-poshta.component';
+import { NovaPoshtaCityComponent } from './MyComponent/nova-poshta-city/nova-poshta-city/nova-poshta-city.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     myComponent,
-    NovaPoshtaComponent
+    NovaPoshtaComponent,
+    NovaPoshtaCityComponent
   ],
   imports: [
     BrowserModule
