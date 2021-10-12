@@ -7,7 +7,7 @@ import {Component, OnInit} from '@angular/core';
 })
 export class NovaPoshtaComponent implements OnInit {
 
-  items = [];
+  itemsReg = [];
 
   constructor() {
   }
@@ -22,7 +22,8 @@ export class NovaPoshtaComponent implements OnInit {
           "apiKey": "3c81d19dc6c4375bc278f4c329fb03cb",
           "modelName": "Address",
           "calledMethod": "getAreas",
-          "methodProperties": {},
+          "methodProperties": {
+          },
         })
       }
     )
@@ -40,12 +41,14 @@ export class NovaPoshtaComponent implements OnInit {
           return;
         }
         console.log(json.data);
-        this.items = json.data;
+        this.itemsReg = json.data;
       })
       .catch(err => {
         console.log(err);
         console.log(err);
       })
   }
+
+
 
 }
