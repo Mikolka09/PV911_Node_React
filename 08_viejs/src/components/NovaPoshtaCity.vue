@@ -2,7 +2,7 @@
   <div v-if="error">Error</div>
   <div v-else-if="isLoading">Loading</div>
   <ul v-else id="areaList">
-    <h3>Regions:</h3>
+    <h3>Cities:</h3>
     <li v-for="item in items" :key="item.Ref" class="text-start">
       {{ item.DescriptionRu }}
     </li>
@@ -11,7 +11,7 @@
 
 <script>
 export default {
-  name: "NovaPoshta",
+  name: "NovaPoshtaCity",
   data: () => {
     return {
       items: [],
@@ -19,11 +19,11 @@ export default {
       error: null
     }
   },
-  beforeMount: function (){
+  beforeMount: function () {
     this.loadAreas();
   },
-  methods:{
-    loadAreas(){
+  methods: {
+    loadAreas() {
       fetch(
           "https://api.novaposhta.ua/v2.0/json/",
           {
@@ -32,7 +32,7 @@ export default {
             body: JSON.stringify({
               "apiKey": "3c81d19dc6c4375bc278f4c329fb03cb",
               "modelName": "Address",
-              "calledMethod": "getAreas",
+              "calledMethod": "getCities",
               "methodProperties": {},
             })
           }
@@ -47,7 +47,7 @@ export default {
           })
           .then(json => {
             if (json['success']) {
-              this.$data.items=json["data"];
+              this.$data.items = json["data"];
             } else {
               console.log(json['errors']);
               console.log(json['warnings']);

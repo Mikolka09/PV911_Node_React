@@ -1,19 +1,31 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <NovaPoshta></NovaPoshta>
+    <h1>Nova Poshta</h1>
+<!--    <img alt="Vue logo" src="./assets/logo.png">-->
+    <div class="row">
+      <div class="col-3">
+        <NovaPoshta></NovaPoshta>
+      </div>
+      <div class="col-4">
+        <NovaPoshtaCity></NovaPoshtaCity>
+      </div>
+    </div>
+
 <!--    <HelloWorld msg="Welcome to Your Vue.js App"/>-->
   </div>
 </template>
 
 <script>
 //import HelloWorld from './components/HelloWorld.vue'
-import NovaPoshta from "@/components/NovaPoshta";
+import NovaPoshta from "./components/NovaPoshta";
+import NovaPoshtaCity from "./components/NovaPoshtaCity";
 
 export default {
   name: 'App',
   components: {
-    NovaPoshta
+    NovaPoshta,
+    // eslint-disable-next-line vue/no-unused-components
+    NovaPoshtaCity
    // HelloWorld
   }
 }
