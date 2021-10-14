@@ -2,7 +2,7 @@
   <div id="app">
 <!--    <h1>Nova Poshta</h1>-->
     <img alt="Vue logo" src="./assets/logo.png">
-    <EntityList></EntityList>
+<!--    <EntityList></EntityList>-->
 <!--    <div class="row">
       <div class="col-3">
         <NovaPoshta></NovaPoshta>
